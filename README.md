@@ -1,64 +1,79 @@
-````markdown
 # 🏥 Healthcare Platform
 
 <p align="center">
-  <strong>A modern healthcare management platform for patients, doctors, and administrators.</strong>
-  <br><br>
-  Streamlining healthcare through secure appointments, digital medical records, and efficient management.
+  <h3 align="center">A Modern Healthcare Management System</h3>
+  <p align="center">
+    Connects <strong>Patients</strong>, <strong>Doctors</strong>, and <strong>Administrators</strong> in one secure platform.
+  </p>
 </p>
+
+---
+
+## 📌 Overview
+
+The **Healthcare Platform** is a web application that simplifies healthcare management by allowing patients to book appointments, doctors to manage consultations, and administrators to monitor the entire system through a centralized dashboard.
 
 ---
 
 ## ✨ Features
 
-- 👤 **Patient Portal**
-  - Secure Registration & Login
-  - Book Appointments
-  - View Medical Records
-  - Download Prescriptions
-  - Access Lab Reports
+### 👤 Patient
+- 🔐 Secure Registration & Login
+- 📅 Book Doctor Appointments
+- 📋 View Medical Records
+- 💊 Download Prescriptions
+- 🧪 Access Lab Reports
 
-- 👨‍⚕️ **Doctor Portal**
-  - Manage Appointments
-  - View Patient History
-  - Create Digital Prescriptions
-  - Update Availability
+### 👨‍⚕️ Doctor
+- 📅 Manage Appointments
+- 👥 View Patient History
+- 💉 Create Digital Prescriptions
+- ⏰ Update Availability
 
-- 👨‍💼 **Admin Dashboard**
-  - Manage Users & Doctors
-  - Monitor Appointments
-  - Dashboard & Analytics
+### 👨‍💼 Admin
+- 👥 Manage Users
+- 👨‍⚕️ Manage Doctors
+- 📊 Dashboard & Analytics
+- 📅 Monitor Appointments
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| Frontend | React.js, HTML5, CSS3, JavaScript |
+| Technology | Used |
+|------------|------|
+| Frontend | React.js, HTML, CSS, JavaScript |
 | Backend | Node.js, Express.js |
 | Database | MongoDB |
 | Authentication | JWT |
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```text
 Healthcare-Platform/
 │
 ├── client/
+│   ├── public/
+│   └── src/
+│
 ├── server/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── middleware/
+│
 ├── screenshots/
-├── README.md
-└── package.json
+├── package.json
+└── README.md
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Installation
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/swadesh-hub/Healthcare-Platform.git
@@ -68,34 +83,38 @@ cd Healthcare-Platform
 ### Install Dependencies
 
 ```bash
-# Frontend
 cd client
 npm install
 
-# Backend
 cd ../server
 npm install
 ```
 
-### Run the Project
+---
+
+## ▶️ Run the Application
+
+### Start Backend
 
 ```bash
-# Backend
 npm run dev
+```
 
-# Frontend
+### Start Frontend
+
+```bash
 npm start
 ```
 
 ---
 
-## 📸 Screenshots
+## 📷 Screenshots
 
-> Add screenshots of your application here.
+> Add your application screenshots here.
 
 | Home | Dashboard |
 |------|-----------|
-| ![Home](screenshots/home.png) | ![Dashboard](screenshots/dashboard.png) |
+| ![](screenshots/home.png) | ![](screenshots/dashboard.png) |
 
 ---
 
@@ -103,10 +122,25 @@ npm start
 
 Contributions are welcome!
 
-1. Fork this repository
-2. Create a feature branch
+1. Fork the repository
+2. Create a new branch
+
+```bash
+git checkout -b feature-name
+```
+
 3. Commit your changes
+
+```bash
+git commit -m "Add new feature"
+```
+
 4. Push your branch
+
+```bash
+git push origin feature-name
+```
+
 5. Open a Pull Request
 
 ---
@@ -127,9 +161,8 @@ This project is licensed under the **MIT License**.
 
 <div align="center">
 
-### ⭐ If you like this project, don't forget to star the repository!
+### ⭐ Star this repository if you found it useful!
 
 Made with ❤️ by **Swadesh Narwariya**
 
 </div>
-````
