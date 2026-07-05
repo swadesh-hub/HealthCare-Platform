@@ -1,16 +1,103 @@
-# React + Vite
+````markdown
+# 🏥 Healthcare Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern healthcare platform that connects patients, doctors, hospitals, and administrators in one secure digital system.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 Overview
 
-## React Compiler
+The Healthcare Platform is designed to simplify healthcare services by providing online appointment booking, digital medical records, doctor consultations, and hospital management through an easy-to-use web application.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👤 Patient
+- Register & Login
+- Book Appointments
+- View Medical Records
+- Download Prescriptions
+- View Lab Reports
+
+### 👨‍⚕️ Doctor
+- Manage Appointments
+- View Patient History
+- Create Digital Prescriptions
+- Update Availability
+
+### 🏥 Admin
+- Manage Users
+- Manage Doctors
+- Monitor Appointments
+- Dashboard & Analytics
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**
+- React.js
+- HTML5
+- CSS3
+- JavaScript
+
+**Backend**
+- Node.js
+- Express.js
+
+**Database**
+- MongoDB
+
+**Authentication**
+- JWT
+
+---
+
+## 📂 Project Structure
+
+```text
+Healthcare-Platform/
+├── client/
+├── server/
+├── screenshots/
+├── README.md
+└── package.json
+```
+
+---
+
+## ▶️ Run the Project
+
+### Backend
+
+```bash
+npm run dev
+```
+
+### Frontend
+
+```bash
+npm start
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Author
+
+**Swadesh Narwariya**
+
+GitHub: https://github.com/swadesh-hub
+````
