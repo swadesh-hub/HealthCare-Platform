@@ -1,24 +1,24 @@
 ````markdown
 # 🏥 Healthcare Platform
 
-> A modern healthcare platform that connects patients, doctors, hospitals, and administrators in one secure digital system.
+> A modern healthcare platform that connects **patients, doctors, and administrators** through a secure and efficient digital healthcare system.
 
 ---
 
 ## 📖 Overview
 
-The Healthcare Platform is designed to simplify healthcare services by providing online appointment booking, digital medical records, doctor consultations, and hospital management through an easy-to-use web application.
+The Healthcare Platform is a web-based application that simplifies healthcare management by enabling online appointment booking, digital medical records, doctor consultations, and secure user management.
 
 ---
 
 ## ✨ Features
 
 ### 👤 Patient
-- Register & Login
+- User Registration & Login
 - Book Appointments
 - View Medical Records
 - Download Prescriptions
-- View Lab Reports
+- Access Lab Reports
 
 ### 👨‍⚕️ Doctor
 - Manage Appointments
@@ -26,7 +26,7 @@ The Healthcare Platform is designed to simplify healthcare services by providing
 - Create Digital Prescriptions
 - Update Availability
 
-### 🏥 Admin
+### 👨‍💼 Admin
 - Manage Users
 - Manage Doctors
 - Monitor Appointments
@@ -36,21 +36,12 @@ The Healthcare Platform is designed to simplify healthcare services by providing
 
 ## 🛠️ Tech Stack
 
-**Frontend**
-- React.js
-- HTML5
-- CSS3
-- JavaScript
-
-**Backend**
-- Node.js
-- Express.js
-
-**Database**
-- MongoDB
-
-**Authentication**
-- JWT
+| Technology | Tools |
+|------------|-------|
+| Frontend | React.js, HTML5, CSS3, JavaScript |
+| Backend | Node.js, Express.js |
+| Database | MongoDB |
+| Authentication | JWT |
 
 ---
 
@@ -67,15 +58,36 @@ Healthcare-Platform/
 
 ---
 
-## ▶️ Run the Project
+## 🚀 Getting Started
 
-### Backend
+### Clone the Repository
+
+```bash
+git clone https://github.com/swadesh-hub/Healthcare-Platform.git
+cd Healthcare-Platform
+```
+
+### Install Dependencies
+
+```bash
+# Frontend
+cd client
+npm install
+
+# Backend
+cd ../server
+npm install
+```
+
+### Run the Application
+
+**Backend**
 
 ```bash
 npm run dev
 ```
 
-### Frontend
+**Frontend**
 
 ```bash
 npm start
@@ -85,13 +97,19 @@ npm start
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
+Contributions are welcome!
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push your branch.
+5. Open a Pull Request.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
@@ -99,5 +117,5 @@ This project is licensed under the MIT License.
 
 **Swadesh Narwariya**
 
-GitHub: https://github.com/swadesh-hub
+- GitHub: https://github.com/swadesh-hub
 ````
