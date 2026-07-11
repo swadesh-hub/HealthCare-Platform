@@ -1,0 +1,6 @@
+{
+  "name": "Healthcare Platform",
+  "description": "An interactive full-stack healthcare platform featuring doctor appointments, a real-time vitals and health log tracker with analytics, medical records management, a simulated doctor dashboard, and an AI Health Companion powered by Gemini for symptom checking and medical report summarization.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
