@@ -9,31 +9,46 @@ import {
   User, 
   Menu, 
   X,
-  Sparkles
+  Sparkles,
+  Accessibility,
+  Headphones,
+  Siren,
+  Globe
 } from "lucide-react";
+import { Language, TRANSLATIONS } from "../localization";
 
 interface SidebarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
   userRole: "patient" | "doctor";
   setUserRole: (role: "patient" | "doctor") => void;
+  language: Language;
+  onLanguageChange: (lang: Language) => void;
 }
 
 export default function Sidebar({ 
   activeTab, 
   setActiveTab, 
   userRole, 
-  setUserRole 
+  setUserRole,
+  language,
+  onLanguageChange
 }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const t = TRANSLATIONS[language];
+
   const patientTabs: { id: string; label: string; icon: any; highlight?: boolean }[] = [
-    { id: "dashboard", label: "Health Dashboard", icon: Activity },
-    { id: "appointments", label: "Book Appointment", icon: Calendar },
-    { id: "vitals", label: "Vitals & Logs", icon: HeartPulse },
-    { id: "records", label: "Medical Records", icon: FolderOpen },
-    { id: "ai-companion", label: "AI Companion", icon: Bot, highlight: true }
+    { id: "dashboard", label: t.dashboard, icon: Activity },
+    { id: "appointments", label: t.appointments, icon: Calendar },
+    { id: "vitals", label: t.vitals, icon: HeartPulse },
+    { id: "records", label: t.records, icon: FolderOpen },
+    { id: "ai-companion", label: t.aiCompanion, icon: Bot, highlight: true },
+    { id: "voice-assistant", label: t.voiceAssistant, icon: Headphones },
+    { id: "emergency-sos", label: t.emergencySos, icon: Siren, highlight: true },
+    { id: "accessibility", label: t.accessibility, icon: Accessibility }
   ];
+
 
   const doctorTabs: { id: string; label: string; icon: any; highlight?: boolean }[] = [
     { id: "doctor-dashboard", label: "Simulated Doctor Portal", icon: Stethoscope }
@@ -52,6 +67,18 @@ export default function Sidebar({
           <span className="font-semibold text-slate-800 tracking-tight">CarePlatform</span>
         </div>
         <div className="flex items-center space-x-2">
+          {/* Mobile Language Selector */}
+          <select
+            value={language}
+            onChange={(e) => onLanguageChange(e.target.value as Language)}
+            className="text-xs px-2 py-1 rounded bg-slate-50 border border-slate-200 text-slate-600 font-medium hover:bg-slate-100 cursor-pointer"
+          >
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="hi">HI</option>
+            <option value="fr">FR</option>
+            <option value="de">DE</option>
+          </select>
           {/* Role switcher on mobile */}
           <button
             onClick={() => {
@@ -113,6 +140,25 @@ export default function Sidebar({
               </div>
               <div className="text-xs text-slate-400 capitalize">{userRole} Profile</div>
             </div>
+          </div>
+
+          {/* Desktop Language Selector */}
+          <div className="mb-6 px-3 py-2 bg-slate-800/40 rounded-xl border border-slate-800 flex items-center justify-between">
+            <div className="flex items-center space-x-2 text-xs text-slate-400">
+              <Globe className="w-3.5 h-3.5 text-blue-400" />
+              <span>Language</span>
+            </div>
+            <select
+              value={language}
+              onChange={(e) => onLanguageChange(e.target.value as Language)}
+              className="bg-slate-900 text-xs text-slate-200 border border-slate-700 rounded px-1.5 py-0.5 focus:outline-none focus:ring-1 focus:ring-blue-500 cursor-pointer"
+            >
+              <option value="en">English (EN)</option>
+              <option value="es">Español (ES)</option>
+              <option value="hi">हिंदी (HI)</option>
+              <option value="fr">Français (FR)</option>
+              <option value="de">Deutsch (DE)</option>
+            </select>
           </div>
 
           <div className="text-[10px] font-bold tracking-wider text-slate-500 uppercase px-3 mb-2 font-mono">

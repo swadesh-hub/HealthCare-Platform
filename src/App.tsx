@@ -6,8 +6,12 @@ import VitalsTracker from "./components/VitalsTracker";
 import MedicalRecords from "./components/MedicalRecords";
 import AICompanion from "./components/AICompanion";
 import DoctorDashboard from "./components/DoctorDashboard";
+import AccessibilityPanel, { AccessibilitySettings } from "./components/AccessibilityPanel";
+import EmergencySOS from "./components/EmergencySOS";
+import VoiceAssistant from "./components/VoiceAssistant";
 import { SEED_VITALS, SEED_APPOINTMENTS, SEED_MEDICAL_RECORDS, SEED_DOCTORS } from "./data";
 import { VitalLog, Appointment, MedicalRecord, ChatMessage } from "./types";
+import { Language, TRANSLATIONS } from "./localization";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>("dashboard");
@@ -18,6 +22,33 @@ export default function App() {
   const [appointments, setAppointments] = useState<Appointment[]>([]);
   const [records, setRecords] = useState<MedicalRecord[]>([]);
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+
+  // Accessibility state hydrated from localStorage
+  const [accessSettings, setAccessSettings] = useState<AccessibilitySettings>(() => {
+    const saved = localStorage.getItem("care_access_settings");
+    return saved ? JSON.parse(saved) : {
+      largeText: false,
+      highContrast: false,
+      simplifiedMode: false,
+      fontSize: "normal"
+    };
+  });
+
+  const saveAccessSettings = (settings: AccessibilitySettings) => {
+    setAccessSettings(settings);
+    localStorage.setItem("care_access_settings", JSON.stringify(settings));
+  };
+
+  // Language state management
+  const [language, setLanguage] = useState<Language>(() => {
+    const saved = localStorage.getItem("care_language");
+    return (saved as Language) || "en";
+  });
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem("care_language", lang);
+  };
 
   // Hydrate state from localStorage or use Seed data on mount
   useEffect(() => {
@@ -225,6 +256,24 @@ export default function App() {
             onCompleteAppointment={handleCompleteAppointment}
           />
         );
+      case "voice-assistant":
+        return (
+          <VoiceAssistant 
+            vitals={vitals}
+            appointments={appointments}
+          />
+        );
+      case "emergency-sos":
+        return (
+          <EmergencySOS />
+        );
+      case "accessibility":
+        return (
+          <AccessibilityPanel 
+            settings={accessSettings}
+            onSettingsChange={saveAccessSettings}
+          />
+        );
       default:
         return (
           <div className="py-20 text-center font-mono text-slate-500 text-xs">
@@ -235,14 +284,23 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-slate-50 font-sans">
+    <div className={`flex flex-col lg:flex-row min-h-screen bg-slate-50 font-sans transition-all duration-200 ${
+      accessSettings.highContrast ? "hc-mode" : ""
+    } ${
+      accessSettings.largeText ? "large-ui" : ""
+    } ${
+      accessSettings.fontSize === "large" ? "font-size-large" : accessSettings.fontSize === "xlarge" ? "font-size-xlarge" : ""
+    }`}>
       {/* Side Navigation panel */}
       <Sidebar 
         activeTab={activeTab} 
         setActiveTab={setActiveTab} 
         userRole={userRole} 
         setUserRole={setUserRole}
+        language={language}
+        onLanguageChange={handleLanguageChange}
       />
+
 
       {/* Main interactive window area */}
       <main className="flex-1 p-4 sm:p-6 lg:p-8 overflow-y-auto max-w-7xl mx-auto w-full">

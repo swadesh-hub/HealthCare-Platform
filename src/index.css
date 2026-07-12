@@ -63,3 +63,115 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Accessibility styling overrides */
+.font-size-large {
+  font-size: 1.15rem;
+}
+.font-size-large p, .font-size-large span, .font-size-large li, .font-size-large a {
+  font-size: 1.05rem !important;
+}
+.font-size-large h1 {
+  font-size: 2.25rem !important;
+}
+.font-size-large h2 {
+  font-size: 1.85rem !important;
+}
+.font-size-large h3 {
+  font-size: 1.5rem !important;
+}
+.font-size-large h4, .font-size-large .text-sm {
+  font-size: 1.15rem !important;
+}
+.font-size-large .text-xs {
+  font-size: 1rem !important;
+}
+.font-size-large .text-\[10px\] {
+  font-size: 0.95rem !important;
+}
+
+.font-size-xlarge {
+  font-size: 1.35rem;
+}
+.font-size-xlarge p, .font-size-xlarge span, .font-size-xlarge li, .font-size-xlarge a {
+  font-size: 1.25rem !important;
+}
+.font-size-xlarge h1 {
+  font-size: 2.75rem !important;
+}
+.font-size-xlarge h2 {
+  font-size: 2.25rem !important;
+}
+.font-size-xlarge h3 {
+  font-size: 1.85rem !important;
+}
+.font-size-xlarge h4, .font-size-xlarge .text-sm {
+  font-size: 1.35rem !important;
+}
+.font-size-xlarge .text-xs {
+  font-size: 1.15rem !important;
+}
+.font-size-xlarge .text-\[10px\] {
+  font-size: 1.1rem !important;
+}
+
+/* Large UI (buttons/icons) scale-up */
+.large-ui button, 
+.large-ui a.button, 
+.large-ui input, 
+.large-ui select {
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+  padding-left: 1.35rem !important;
+  padding-right: 1.35rem !important;
+  min-height: 3.2rem !important;
+  font-size: 1.05rem !important;
+}
+.large-ui svg {
+  transform: scale(1.15);
+}
+
+/* High Contrast Mode rules */
+.hc-mode main {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.hc-mode main div, 
+.hc-mode main section, 
+.hc-mode main article, 
+.hc-mode main input, 
+.hc-mode main select, 
+.hc-mode main textarea {
+  border-color: #000000 !important;
+  color: #000000 !important;
+}
+.hc-mode main .text-slate-400, 
+.hc-mode main .text-slate-500, 
+.hc-mode main .text-slate-600, 
+.hc-mode main .text-slate-700, 
+.hc-mode main .text-slate-800 {
+  color: #000000 !important;
+}
+.hc-mode main .bg-slate-50, 
+.hc-mode main .bg-slate-100, 
+.hc-mode main .bg-slate-200, 
+.hc-mode main .bg-slate-300,
+.hc-mode main .bg-white {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-width: 2px !important;
+}
+.hc-mode main button {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+.hc-mode main button:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.hc-mode main a {
+  text-decoration: underline !important;
+  color: #0000ee !important;
+}
+
